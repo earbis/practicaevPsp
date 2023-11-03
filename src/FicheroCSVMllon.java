@@ -23,7 +23,7 @@ public class FicheroCSVMllon {
         
 	System.out.printf("Directorio de trabajo: %s%n",pb.directory());
 
-    //se ejecuta el proceso (10 veces)
+    //se ejecuta el proceso (100 veces)
 	for (int i = 0; i < 100; i++) {
 		Process p = pb.start();	
 		try {
