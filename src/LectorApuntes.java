@@ -10,11 +10,11 @@ import java.nio.file.FileAlreadyExistsException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Lector  extends Thread{
+public class LectorApuntes  extends Thread{
 	 static File fichero;
 	 String ruta;
 	 Map<String, Integer> diccionario = new HashMap<String, Integer>();
-	 public Lector(String ruta) {
+	 public LectorApuntes(String ruta) {
 		 this.ruta=ruta;
 	    }
 	 @Override
@@ -22,8 +22,11 @@ public class Lector  extends Thread{
 	        try {
 	            notificar("Iniciando el proceso de lectura.");
 	            abrir();
-	            analizar();	            
+	            
+	            analizar();
+	            
 	            guardar();
+	            
 	        } catch (IOException | NullPointerException npe) {
 	            notificar("No pudo realizarse el proceso.");
 	        }
@@ -31,8 +34,44 @@ public class Lector  extends Thread{
 
 	public static void main(String[] args) throws IOException {
 		    
-		Lector lector = new Lector("archivoCSV.csv");
+		LectorApuntes lector = new LectorApuntes("archivoCSV.csv");
 		lector.start();
+		/*Lector lector2 = new Lector("archivoC.csv");
+		Lector lector3 = new Lector("prueba.csv");
+		lector.abrir();
+	    lector.analizar();
+	    lector.guardar();
+	    lector2.abrir();
+	    lector2.analizar();
+	    lector2.guardar();
+	    lector3.abrir();
+	    lector3.analizar();
+	    lector3.guardar();
+		*/
+	/*
+	//metodo para abrir el fichero
+	File fichero = new File(".\\archivoCSV.csv");
+	
+	FileReader fr = new FileReader(fichero);
+	BufferedReader br = new BufferedReader(fr);
+	Map<String, Integer> diccionario = new HashMap<String, Integer>();
+	File resultado = new File(".\\ResultadoCSV.csv");
+	FileWriter fw = new FileWriter(resultado);
+	BufferedWriter bw = new BufferedWriter(fw);
+	String c;
+	
+	while ((c = br.readLine	()) != null) {
+		
+		String t []= c.split(", ");
+		diccionario.put(t[0],Integer.parseInt(t[1]));
+		
+		}
+	System.out.println(diccionario.toString());
+	bw.write(diccionario);
+	//metodo para procesar la informacion
+	//metodo para escribir el resultado en otro fichero
+	
+	*/
 	}
 	private void notificar(String mensaje) {
         System.out.println("Hilo " + Thread.currentThread().getId() + ": " + mensaje);
@@ -81,7 +120,10 @@ public class Lector  extends Thread{
 		File resultado = new File(".\\ResultadoCSV.csv");
 		FileWriter fw = new FileWriter(resultado);
 		BufferedWriter bw = new BufferedWriter(fw);
-		bw.write(diccionario.toString());
+		for (Map.Entry<String, Integer> entry : diccionario.entrySet()) {
+            bw.write(entry.getKey() + ", " + entry.getValue());
+            bw.newLine();
+        }
 		bw.close();
 		notificar("Guardado de resultados completado.");
 		
