@@ -1,3 +1,4 @@
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,15 +7,16 @@ public class Conector {
 	public static void main(String[] args) throws IOException {
 		File directorio = new File(".\\bin");
 		File direccion = new File("info.txt");
+		File guardado = new File("NumerosOrdenados.txt");
 		ProcessBuilder pr= new ProcessBuilder("java","OrdenarNumeros");
 		ProcessBuilder pb= new ProcessBuilder("java","Aleatorios");
 		pr.directory(directorio);
 		pb.directory(directorio);
 		pb.redirectOutput(direccion);
 		pr.redirectInput(direccion);
-		pr.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+		pr.redirectOutput(guardado);
 		Process p = pb.start();
-		Process p2 = pr.start();
+		pr.start();
 		
 		try {
 			InputStream is = p.getInputStream();

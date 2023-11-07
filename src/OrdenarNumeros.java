@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,6 +15,7 @@ public class OrdenarNumeros {
 	        }
 		Collections.sort(lista);
 		System.out.println(lista.toString());
+		scanner.close();
 	}
 	
 }
