@@ -10,7 +10,7 @@ public class FicheroCSVMllon {
 	//creamos objeto File al directorio donde esta Ejemplo2
 	  
 	/*
-	 * IMPORTANTE como el directorio esta en bin el archivo tambien se va a crear en esa carpeta
+	 * IMPORTANTE como el directorio esta en bin el archivo tambien se va a crear en esa carpeta y se va a llamar igual que en el FicheroCSV
 	 * 
 	 */
 	File directorio = new File(".\\bin");	
@@ -21,7 +21,7 @@ public class FicheroCSVMllon {
     //se establece el directorio donde se encuentra el ejecutable
     pb.directory(directorio);
         
-	System.out.printf("Directorio de trabajo: %s%n",pb.directory());
+
 
     //se ejecuta el proceso (100 veces)
 	for (int i = 0; i < 100; i++) {
