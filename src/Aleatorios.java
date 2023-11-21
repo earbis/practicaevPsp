@@ -2,6 +2,11 @@
 import java.util.Random;
 
 public class Aleatorios {
+	
+	/*
+	 * EJERCICIO 2.2
+	 */
+	
 public static void main(String[] args) {
 	Random random = new Random();
 	String cadena = "";

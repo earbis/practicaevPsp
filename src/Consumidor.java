@@ -1,4 +1,9 @@
 public class Consumidor extends Thread {
+	
+	/*
+	 * EJERCICIO 4
+	 */
+	
     private Buffer buffer;
 
     public Consumidor(Buffer buffer) {

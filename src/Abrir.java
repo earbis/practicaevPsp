@@ -8,6 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Abrir extends Thread {
+
+	
+	/*
+	 * EJERCICIO 1.4 se usa en LectorThread
+	 */
+	
 	 static File fichero;
 	 Map<String, Integer> diccionario = new HashMap<String, Integer>();
 @Override
@@ -20,7 +26,6 @@ public void run() {
  try {
 	texto= br1.readLine();
 } catch (IOException e) {
-	// TODO Auto-generated catch block
 	e.printStackTrace();
 }
 	 }while(!(new File(texto)).exists());
@@ -30,7 +35,6 @@ public void run() {
 	try {
 		fr = new FileReader(fichero);
 	} catch (FileNotFoundException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	 BufferedReader br = new BufferedReader(fr);
@@ -43,13 +47,11 @@ public void run() {
 		}
 		
 	}catch (FileNotFoundException e) { System.out.println();} catch (IOException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}	
 	try {
 		br.close();
 	} catch (IOException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 }

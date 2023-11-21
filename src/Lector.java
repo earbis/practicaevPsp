@@ -11,12 +11,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Lector  extends Thread{
+
+	
+	/*
+	 * EJERCICIO 1.4 RESUELTO CON UN UNICO HILO Y UNA CLASE
+	 */
+	
 	 static File fichero;
 	 String ruta;
 	 Map<String, Integer> diccionario = new HashMap<String, Integer>();
+	 
+	 //constructor
 	 public Lector(String ruta) {
 		 this.ruta=ruta;
 	    }
+	 //metodo THREAD
 	 @Override
 	    public void run() {
 	        try {
@@ -28,15 +37,19 @@ public class Lector  extends Thread{
 	            notificar("No pudo realizarse el proceso.");
 	        }
 	    }
-
+	 //MAIN
 	public static void main(String[] args) throws IOException {
 		    
 		Lector lector = new Lector("archivoCSV.csv");
 		lector.start();
 	}
+	
+	//Mantiene registro de lo que hace el hilo
 	private void notificar(String mensaje) {
         System.out.println("Hilo " + Thread.currentThread().getId() + ": " + mensaje);
     }
+	
+	//abre el archivo
 	public void abrir() throws IOException {
 		if (!(new File(ruta)).exists()) {
             notificar("El archivo no existe.");
@@ -57,6 +70,8 @@ public class Lector  extends Thread{
         	
 		}
 	}
+	
+	//procesa la informacion
 	public Map<String, Integer> analizar() throws IOException {
 		FileReader fr = new FileReader(fichero);
 		BufferedReader br = new BufferedReader(fr);
@@ -77,6 +92,8 @@ public class Lector  extends Thread{
 		notificar("Análisis del archivo completado.");
 		return diccionario;
 	}
+	
+	//guarda la informacion en otro archivo
 	public void guardar() throws IOException {
 		File resultado = new File(".\\ResultadoCSV.csv");
 		FileWriter fw = new FileWriter(resultado);

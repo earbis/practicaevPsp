@@ -5,6 +5,11 @@ import java.util.Random;
 import java.util.Set;
 
 public class Identificador {
+	
+	/*
+	 * EJERCICIO 1.1 GENERADOR DE 200 IDENTIFICADORES
+	 */
+	
 	int cantidad= 200;
 	int longitud=6;
 	Set<String> set = new HashSet<>();
@@ -41,7 +46,7 @@ public class Identificador {
 		            }
 			}
 	}
-
+	//SETTERS Y GETTERS
 	public Set<String> getSet() {
 		return set;
 	}

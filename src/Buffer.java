@@ -1,4 +1,9 @@
 public class Buffer {
+	
+	/*
+	 * EJERCICIO 4
+	 */
+	
     char[] data = new char[6];
     boolean disponible = false;
 

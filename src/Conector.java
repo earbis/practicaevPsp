@@ -4,6 +4,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class Conector {
+
+	
+	/*
+	 * EJERCICIO 2.3
+	 */
+	
 	public static void main(String[] args) throws IOException {
 		File directorio = new File(".\\bin");
 		File direccion = new File("info.txt");

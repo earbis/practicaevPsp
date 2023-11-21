@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class FicheroCSV {
+	
+	/*
+	 * EJERCICIO 1.2
+	 */
+	
 	//main
 	public static void main(String[] args) throws IOException, FileNotFoundException {
 		//llamar al identificador
@@ -22,14 +27,9 @@ public class FicheroCSV {
 				fw.append(identificador+", ");
 				fw.append( Integer.toString(cont)+"\n");
 				cont++;
-			
+			}
 		}
-		
-			
-			
-		}
-		//write identificador y cont
-		//cerrar fileqriter
+		//cerrar filewriter
 		fw.close();
 	}
 }
