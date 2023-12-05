@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.util.Random;
 
 public class Lenguaje {
+	
+	/*
+	 * EJERCICIO 3.1
+	 */
+	
 	public static void main(String[] args) throws IOException {
 		//File fichero = new File(args[0]);
 		int repeticiones = Integer.parseInt(args[0]);

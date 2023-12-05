@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class OrdenarNumeros {
+	
+	/*
+	 * EJERCICIO 2.1
+	 */
+	
 	public static void main(String[] args) {
 		 Scanner scanner = new Scanner(System.in);
 	        List<Integer> lista = new ArrayList<>();

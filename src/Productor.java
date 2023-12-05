@@ -1,6 +1,11 @@
 import java.util.Random;
 
 public class Productor extends Thread {
+	
+	/*
+	 * EJERCICIO 4
+	 */
+	
     private Buffer buffer;
     private Random random = new Random();
 

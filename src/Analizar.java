@@ -7,6 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Analizar extends Thread {
+
+	
+	/*
+	 * EJERCICIO 1.4 se usa en LectorThread
+	 */
+	
 	 static File fichero = new File("archivoCSV.csv");
 	 Map<String, Integer> diccionario = new HashMap<String, Integer>();
 @Override
@@ -15,7 +21,6 @@ public void run() {
 	try {
 		fr = new FileReader(fichero);
 	} catch (FileNotFoundException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	BufferedReader br = new BufferedReader(fr);
@@ -30,7 +35,6 @@ public void run() {
 			
 			}
 	} catch (NumberFormatException | IOException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	if(diccionario.isEmpty()) {
@@ -39,7 +43,6 @@ public void run() {
 	try {
 		br.close();
 	} catch (IOException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	System.out.println(diccionario);

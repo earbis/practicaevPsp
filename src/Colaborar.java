@@ -2,6 +2,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class Colaborar {
+	
+	/*
+	 * EJERCICIO 3.2
+	 */
+	
 	public static void main(String[] args) throws IOException {
 		/*
 		 * ESTO NO GARANTIZA QUE VAYAN A SEGUIR EL ORDEN NATURAL

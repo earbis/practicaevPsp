@@ -1,6 +1,12 @@
 
 public class LectorThread {
 	public static void main(String[] args) throws InterruptedException {
+
+		
+		/*
+		 * EJERCICIO 1.4 RESUELTO CON MULTIPLES HILOS DONDE HAY UNA CLASE PARA CADA ACCION.
+		 */
+		
 		Abrir abrir = new Abrir();
 		Analizar analizar = new Analizar();
 		Guardar guardar = new Guardar();

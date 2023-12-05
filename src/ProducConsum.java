@@ -1,4 +1,9 @@
 public class ProducConsum {
+	
+	/*
+	 * EJERCICIO 4
+	 */
+	
     public static void main(String[] args) {
         Buffer buffer = new Buffer();
 
